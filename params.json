@@ -1,0 +1,27 @@
+{
+	"Url": "https://sdra-default-projects.s3-us-west-2.amazonaws.com/Wrench_2021.zip",
+	"Name": "TestWrench",
+	"TopLevelAssembly": "Wrench.iam",
+	"Config": {
+		"WrenchSz": {
+			"value": "\"Large\"",
+			"unit": "Text",
+			"values": ["\"Large\"", "\"Medium\"", "\"Small\""]
+		},
+		"JawOffset": {
+			"value": "11 mm",
+			"unit": "mm",
+			"values": []
+		},
+		"PartMaterial": {
+			"value": "\"Steel\"",
+			"unit": "Text",
+			"values": ["\"Cast Bronze\"", "\"Cast Iron\"", "\"Copper\"", "\"Gray Iron\"", "\"Stainless Steel\"", "\"Steel\""]
+		},
+		"iTrigger0": {
+			"value": "2 ul",
+			"unit": "ul",
+			"values": []
+		}
+	}
+}
