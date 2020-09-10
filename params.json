@@ -4,24 +4,16 @@
 	"TopLevelAssembly": "Wrench.iam",
 	"Config": {
 		"WrenchSz": {
-			"value": "\"Large\"",
-			"unit": "Text",
-			"values": ["\"Large\"", "\"Medium\"", "\"Small\""]
+			"value": "\"Large\""
 		},
 		"JawOffset": {
-			"value": "11 mm",
-			"unit": "mm",
-			"values": []
+			"value": "11 mm"
 		},
 		"PartMaterial": {
-			"value": "\"Steel\"",
-			"unit": "Text",
-			"values": ["\"Cast Bronze\"", "\"Cast Iron\"", "\"Copper\"", "\"Gray Iron\"", "\"Stainless Steel\"", "\"Steel\""]
+			"value": "\"Steel\""
 		},
 		"iTrigger0": {
-			"value": "2 ul",
-			"unit": "ul",
-			"values": []
+			"value": "2 ul"
 		}
 	}
 }

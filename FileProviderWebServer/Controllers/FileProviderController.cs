@@ -39,6 +39,9 @@ namespace FileProviderWebServer.Controllers
         [HttpPost]
         public IActionResult Post([FromForm] string fileContent)
         {
+            if (string.IsNullOrEmpty(fileContent))
+                return View("FileContentUpload");
+
             _fileProviderService.FileContent = fileContent;
 
             ViewBag.FileContent = _fileProviderService.FileContent;
