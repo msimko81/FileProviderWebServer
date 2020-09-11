@@ -15,6 +15,14 @@ namespace FileProviderWebServer.Controllers
         }
 
         [HttpGet]
+        [Route("index")]
+        public IActionResult Index()
+        {
+            ViewBag.FileContent = _fileProviderService.FileContent;
+            return View();
+        }
+
+        [HttpGet]
         [Route("fileContentWithLinks")]
         public IActionResult FileContentWithLinks()
         {

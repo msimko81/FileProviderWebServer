@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "POC for Inventor Configurator CPQ integration";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type='text/javascript'>
+        /* attach a submit handler to the form */
+        $(function() {
+            var form = $("#jsonForm");
+
+            form.submit(function(event) {
+
+                /* stop form from submitting normally */
+                event.preventDefault();
+
+                /* get the action attribute from the <form action=""> element */
+                var $form = $(this), url = $form.attr('action');
+
+                /* Send the data using post with element id name and name2*/
+                var posting = $.post(url, { fileContent: $('#fileContent').val() });
+
+                /* Alerts the results */
+                posting.always(function(data) {
+                    document.getElementById('forge-configurator-inventor').src = 'https://localhost:5001/?http://localhost:5080/fileprovider/fileContent';
+                });
+
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="jsonForm" action="/fileprovider" method="post">
+        <textarea id="fileContent" name="fileContent" rows="20" cols="50">{&#xD;&#xA;&#x9;&quot;Url&quot;: &quot;https://sdra-default-projects.s3-us-west-2.amazonaws.com/Wrench_2021.zip&quot;,&#xD;&#xA;&#x9;&quot;Name&quot;: &quot;TestWrench&quot;,&#xD;&#xA;&#x9;&quot;TopLevelAssembly&quot;: &quot;Wrench.iam&quot;,&#xD;&#xA;&#x9;&quot;Config&quot;: {&#xD;&#xA;&#x9;&#x9;&quot;WrenchSz&quot;: {&#xD;&#xA;&#x9;&#x9;&#x9;&quot;value&quot;: &quot;\&quot;Small\&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;&quot;JawOffset&quot;: {&#xD;&#xA;&#x9;&#x9;&#x9;&quot;value&quot;: &quot;12 mm&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;&quot;PartMaterial&quot;: {&#xD;&#xA;&#x9;&#x9;&#x9;&quot;value&quot;: &quot;\&quot;Steel\&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;&quot;iTrigger0&quot;: {&#xD;&#xA;&#x9;&#x9;&#x9;&quot;value&quot;: &quot;2 ul&quot;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;</textarea>
+        <input type="submit" id="submitBtn" name="submitBtn" value="Submit" />
+    </form>
+
+    <iframe id="forge-configurator-inventor" name="forge-configurator-inventor" height="60%" width="100%">
+    </iframe>
+</body>
+</html>

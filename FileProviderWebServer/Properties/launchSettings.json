@@ -6,8 +6,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5001",
-      "launchUrl": "fileprovider"
+      "applicationUrl": "http://localhost:5080",
+      "launchUrl": "fileprovider/index"
     },
     "Docker": {
       "commandName": "Docker",
